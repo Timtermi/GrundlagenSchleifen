@@ -10,9 +10,9 @@ namespace Aufgabe_5
 
             a = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = -a; i <= a; i++)
+            for (int i = -a; i <= a; i=i+2)
             {
-                Console.WriteLine(i);
+                Console.Write(" "+i) ;
             }
         }
     }
