@@ -6,42 +6,32 @@ namespace Aufgabe_9
     {
         static void Main(string[] args)
         {
-            double StartKapital;
-            double Zinsen;
-            double Jahre;
-            double Endkapital;
+            int anzahl = 0;
+            double K = 0;
+            double p = 0;
+            double K_n = 0;
 
-            
+            Console.WriteLine("Geben Sie Ihr Kapital ein");
+            K = Convert.ToDouble(Console.ReadLine());
+            K_n = K;
+            Console.WriteLine("Geben Sie Ihr Zinssatz ein");
+            p = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Geben Sie Ihr Kapital in EUR an");
-            StartKapital = Convert.ToDouble(Console.ReadLine());
+            do
+            {
+                anzahl++;
 
-            Console.WriteLine("Wie viele Jahre wollen Sie anlegen?");
-            Jahre = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Geben Sie Ihren Zinssatz pro Jahr ein");
-            Zinsen = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Die Ergebnisse für die folgenden Jahre sind");
-
+                K_n = K_n + K_n * (p / 100);
 
 
-            double TempPSatz = 1 + ((double)Zinsen / 100);
-            double ErgPSatz = Math.Pow(TempPSatz, Jahre);
+            }
+            while (K_n <= K * 2);
 
 
-            Endkapital = StartKapital * ErgPSatz;
-            Zinsen = Endkapital - StartKapital;
-
-
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine($"Ihr Endergebnis ist: {Endkapital:f2}EUR");
-            Console.WriteLine("----------------------------------------");
-            Console.ReadKey();
-            Console.Clear();
-
+            Console.WriteLine($"Es dauert {anzahl} Jahre");
         }
     }
 }
 
-        
+
+
